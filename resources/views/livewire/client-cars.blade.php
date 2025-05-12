@@ -17,7 +17,7 @@
         @foreach ($cars as $car)
             <tr>
                 <td class="border px-3 py-2">
-                    <button wire:click="$emit('loadServiceLog', {{ $car['car_id'] }})"
+                    <button wire:click="selectCar({{ $car['car_id'] }})"
                             class="text-blue-600 hover:underline">
                         {{ $car['car_id'] }}
                     </button>
@@ -40,5 +40,8 @@
         @endforeach
         </tbody>
     </table>
+    @if ($selectedCarId)
+        <livewire:service-log :clientId="$clientId" :carId="$selectedCarId" />
+    @endif
 </div>
 

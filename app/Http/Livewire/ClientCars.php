@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Repositories\Interface\CarRepositoryInterface;
+use App\Repositories\Interfaces\CarRepositoryInterface;
 use Livewire\Component;
 
 class ClientCars extends Component
 {
     public int $clientId;
     public array $cars = [];
+    public ?int $selectedCarId = null;
 
     protected CarRepositoryInterface $carRepo;
 
@@ -21,6 +22,11 @@ class ClientCars extends Component
     {
         $this->clientId = $clientId;
         $this->cars = $this->carRepo->getWithLastServiceByClientId($clientId)->toArray();
+    }
+
+    public function selectCar(int $carId)
+    {
+        $this->selectedCarId = $carId;
     }
 
     public function render()

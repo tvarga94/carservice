@@ -2,13 +2,16 @@
 
 namespace App\Providers;
 
-use CarRepositoryInterface;
-use ClientRepositoryInterface;
-use Eloquent\CarRepository;
-use Eloquent\ClientRepository;
-use Eloquent\ServiceRepository;
+use App\Http\Livewire\ClientSearch;
+use App\Repositories\Eloquent\CarRepository;
+use App\Repositories\Eloquent\ClientRepository;
+use App\Repositories\Eloquent\ServiceRepository;
+use App\Repositories\Interfaces\CarRepositoryInterface;
+use App\Repositories\Interfaces\ClientRepositoryInterface;
+use App\Repositories\Interfaces\ServiceRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
-use ServiceRepositoryInterface;
+use Livewire\Livewire;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Livewire::component('client-search', ClientSearch::class);
     }
 }

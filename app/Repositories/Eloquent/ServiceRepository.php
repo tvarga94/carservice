@@ -3,7 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Service;
-use App\Repositories\Interface\ServiceRepositoryInterface;
+use App\Repositories\Interfaces\ServiceRepositoryInterface;
 use Illuminate\Support\Collection;
 
 class ServiceRepository implements ServiceRepositoryInterface

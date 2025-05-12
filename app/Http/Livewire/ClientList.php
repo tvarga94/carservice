@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Repositories\Interface\ClientRepositoryInterface;
+use App\Repositories\Interfaces\ClientRepositoryInterface;
 use Livewire\Component;
 
 class ClientList extends Component

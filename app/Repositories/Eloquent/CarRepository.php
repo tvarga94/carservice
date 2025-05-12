@@ -4,7 +4,8 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Car;
 
-use App\Repositories\Interface\CarRepositoryInterface;
+
+use App\Repositories\Interfaces\CarRepositoryInterface;
 use Illuminate\Support\Collection;
 
 class CarRepository implements CarRepositoryInterface

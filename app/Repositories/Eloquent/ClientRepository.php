@@ -3,7 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Client;
-use App\Repositories\Interface\ClientRepositoryInterface;
+use App\Repositories\Interfaces\ClientRepositoryInterface;
 use Illuminate\Support\Collection;
 
 class ClientRepository implements ClientRepositoryInterface
