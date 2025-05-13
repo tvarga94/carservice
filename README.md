@@ -50,7 +50,7 @@ This is a Laravel Livewire-based single-page application for managing car servic
    > The system automatically seeds the database if tables are empty.
 
    ```bash
-   php artisan migrate:fresh
+   php artisan migrate
    ```
 
 5. **Start the development server**
@@ -58,7 +58,7 @@ This is a Laravel Livewire-based single-page application for managing car servic
    ```bash
    php artisan serve
    ```
-
+   
    Visit `http://127.0.0.1:8000`
 
 ---

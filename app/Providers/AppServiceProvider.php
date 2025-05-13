@@ -9,6 +9,7 @@ use App\Repositories\Interfaces\CarRepositoryInterface;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
 use App\Repositories\Interfaces\ServiceRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
 
@@ -30,12 +31,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (
-            DB::table('clients')->count() === 0 &&
-            DB::table('cars')->count() === 0 &&
-            DB::table('services')->count() === 0
-        ) {
-            Artisan::call('db:seed', ['--class' => 'InitialDataSeeder']);
+        try {
+            if (
+                Schema::hasTable('clients') &&
+                Schema::hasTable('cars') &&
+                Schema::hasTable('services')
+            ) {
+                $clientsEmpty = DB::table('clients')->count() === 0;
+                $carsEmpty = DB::table('cars')->count() === 0;
+                $servicesEmpty = DB::table('services')->count() === 0;
+
+                if ($clientsEmpty && $carsEmpty && $servicesEmpty) {
+                    Artisan::call('db:seed', ['--class' => 'InitialDataSeeder']);
+                }
+            }
+        } catch (\Exception $e) {
         }
     }
 }
