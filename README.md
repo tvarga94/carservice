@@ -14,7 +14,7 @@ This is a Laravel Livewire-based single-page application for managing car servic
 
 ---
 
-##️ Setup Instructions
+## Setup Instructions
 
 1. **Clone the project**
 
