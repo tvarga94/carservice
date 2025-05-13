@@ -4,10 +4,11 @@ namespace App\Livewire;
 
 use App\Repositories\Interfaces\ClientRepositoryInterface;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ClientList extends Component
 {
-    public array $clients = [];
+    use WithPagination;
 
     public ?int $selectedClientId = null;
 
@@ -18,11 +19,6 @@ class ClientList extends Component
         $this->clientsRepo = $clientsRepo;
     }
 
-    public function mount()
-    {
-        $this->clients = $this->clientsRepo->all()->toArray();
-    }
-
     public function selectClient(int $clientId)
     {
         $this->selectedClientId = $clientId;
@@ -31,6 +27,7 @@ class ClientList extends Component
     public function render()
     {
         return view('livewire.client-list', [
+            'clients' => $this->clientsRepo->paginate(10),
             'selectedClientId' => $this->selectedClientId,
         ]);
     }

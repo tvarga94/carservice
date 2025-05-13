@@ -3,6 +3,7 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\Client;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 interface ClientRepositoryInterface
@@ -26,4 +27,7 @@ interface ClientRepositoryInterface
      * Search clients by partial name match.
      */
     public function searchByName(string $name): Collection;
+
+    public function paginate(int $perPage = 10): LengthAwarePaginator;
+
 }

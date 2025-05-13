@@ -24,6 +24,9 @@
         @endforeach
         </tbody>
     </table>
+    <div class="mt-4">
+        {{ $clients->links() }}
+    </div>
     @if ($selectedClientId)
         <livewire:client-cars :clientId="$selectedClientId" />
     @endif
