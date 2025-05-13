@@ -24,7 +24,7 @@ class CarRepository implements CarRepositoryInterface
     {
         return Car::where('client_id', $clientId)
             ->with(['latestService' => function ($query) {
-                $query->orderByDesc('log_number')->limit(1);
+                $query->orderByDesc('lognumber')->limit(1);
             }])
             ->get();
     }

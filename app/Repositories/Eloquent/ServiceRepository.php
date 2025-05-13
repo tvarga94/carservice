@@ -12,7 +12,7 @@ class ServiceRepository implements ServiceRepositoryInterface
     {
         return Service::where('client_id', $clientId)
             ->where('car_id', $carId)
-            ->orderBy('log_number', 'asc')
+            ->orderBy('lognumber', 'asc')
             ->get();
     }
 

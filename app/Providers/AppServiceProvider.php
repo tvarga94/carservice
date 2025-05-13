@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\Livewire\ClientSearch;
 use App\Repositories\Eloquent\CarRepository;
 use App\Repositories\Eloquent\ClientRepository;
 use App\Repositories\Eloquent\ServiceRepository;
@@ -10,7 +9,8 @@ use App\Repositories\Interfaces\CarRepositoryInterface;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
 use App\Repositories\Interfaces\ServiceRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Artisan;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +30,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Livewire::component('client-search', ClientSearch::class);
+        if (
+            DB::table('clients')->count() === 0 &&
+            DB::table('cars')->count() === 0 &&
+            DB::table('services')->count() === 0
+        ) {
+            Artisan::call('db:seed', ['--class' => 'InitialDataSeeder']);
+        }
     }
 }

@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
-            $table->unsignedInteger('car_id'); // links to cars.car_id per client
-            $table->unsignedInteger('log_number'); // unique per client+car
+            $table->unsignedInteger('car_id');
+            $table->unsignedInteger('lognumber');
             $table->string('event');
-            $table->timestamp('event_time')->nullable();
+            $table->timestamp('eventtime')->nullable();
             $table->string('document_id');
             $table->timestamps();
 
-            $table->unique(['client_id', 'car_id', 'log_number']);
+            $table->unique(['client_id', 'car_id', 'lognumber']);
         });
     }
 

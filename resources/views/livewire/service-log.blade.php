@@ -13,12 +13,12 @@
         <tbody>
         @foreach ($logs as $log)
             <tr>
-                <td class="border px-3 py-2">{{ $log['log_number'] }}</td>
+                <td class="border px-3 py-2">{{ $log['lognumber'] }}</td>
                 <td class="border px-3 py-2">{{ $log['event'] }}</td>
                 <td class="border px-3 py-2">
                     {{ 'regisztralt' === $log['event']
                         ? \Carbon\Carbon::parse($log['registered'] ?? now())->toDateTimeString()
-                        : \Carbon\Carbon::parse($log['event_time'])->toDateTimeString() }}
+                        : \Carbon\Carbon::parse($log['eventtime'])->toDateTimeString() }}
                 </td>
                 <td class="border px-3 py-2">{{ $log['document_id'] }}</td>
             </tr>

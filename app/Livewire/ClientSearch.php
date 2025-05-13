@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Repositories\Interfaces\CarRepositoryInterface;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
@@ -74,7 +74,7 @@ class ClientSearch extends Component
         $this->result = [
             'id' => $client->id,
             'name' => $client->name,
-            'card_number' => $client->card_number,
+            'idcard' => $client->idcard,
             'car_count' => $carCount,
             'service_count' => $serviceCount,
         ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Repositories\Interfaces\CarRepositoryInterface;
 use Livewire\Component;

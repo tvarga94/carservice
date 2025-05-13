@@ -19,7 +19,7 @@
                         {{ $client['name'] }}
                     </button>
                 </td>
-                <td class="border px-4 py-2">{{ $client['card_number'] }}</td>
+                <td class="border px-4 py-2">{{ $client['idcard'] }}</td>
             </tr>
         @endforeach
         </tbody>

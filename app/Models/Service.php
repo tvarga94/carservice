@@ -10,14 +10,14 @@ class Service extends Model
     protected $fillable = [
         'client_id',
         'car_id',
-        'log_number',
+        'lognumber',
         'event',
-        'event_time',
+        'eventtime',
         'document_id',
     ];
 
     protected $casts = [
-        'event_time' => 'datetime',
+        'eventtime' => 'datetime',
     ];
 
     public function client(): BelongsTo

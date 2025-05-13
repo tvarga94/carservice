@@ -21,7 +21,7 @@
         <div class="mt-3 border p-3 rounded bg-gray-50">
             <p><strong>ID:</strong> {{ $result['id'] }}</p>
             <p><strong>Name:</strong> {{ $result['name'] }}</p>
-            <p><strong>Card Number:</strong> {{ $result['card_number'] }}</p>
+            <p><strong>Card Number:</strong> {{ $result['idcard'] }}</p>
             <p><strong>Number of Cars:</strong> {{ $result['car_count'] }}</p>
             <p><strong>Service Records Total:</strong> {{ $result['service_count'] }}</p>
         </div>

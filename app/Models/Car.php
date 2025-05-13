@@ -15,7 +15,7 @@ class Car extends Model
         'type',
         'registered',
         'ownbrand',
-        'accidents',
+        'accident',
     ];
 
     protected $casts = [
@@ -38,6 +38,6 @@ class Car extends Model
     {
         return $this->hasOne(Service::class, 'car_id', 'car_id')
             ->where('client_id', $this->client_id)
-            ->latest('log_number');
+            ->latest('lognumber');
     }
 }

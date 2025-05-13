@@ -20,7 +20,7 @@ class ClientRepository implements ClientRepositoryInterface
 
     public function findByCardNumber(string $cardNumber): ?Client
     {
-        return Client::where('card_number', $cardNumber)->first();
+        return Client::where('idcard', $cardNumber)->first();
     }
 
     public function searchByName(string $name): Collection
