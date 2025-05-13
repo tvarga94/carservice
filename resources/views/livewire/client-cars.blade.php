@@ -41,7 +41,7 @@
         </tbody>
     </table>
     @if ($selectedCarId)
-        <livewire:service-log :clientId="$clientId" :carId="$selectedCarId" />
+        <livewire:service-log :clientId="$clientId" :carId="$selectedCarId" :key="$selectedCarId" />
     @endif
 </div>
 

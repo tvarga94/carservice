@@ -28,6 +28,6 @@
         {{ $clients->links() }}
     </div>
     @if ($selectedClientId)
-        <livewire:client-cars :clientId="$selectedClientId" />
+        <livewire:client-cars :clientId="$selectedClientId" :key="'client-cars-'.$selectedClientId" />
     @endif
 </div>
