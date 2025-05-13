@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Car Service App</title>
+    @vite('resources/css/app.css')
     @livewireStyles
 </head>
-<body>
-<h1>Welcome to the Livewire App</h1>
+<body class="bg-gray-100 text-gray-800">
+<div class="container mx-auto p-6 space-y-6">
+    <h1 class="text-3xl font-bold">Car Service Management</h1>
 
-<livewire:client-search />
+    <div class="bg-white p-4 shadow rounded">
+        <livewire:client-search />
+    </div>
+
+    <div class="bg-white p-4 shadow rounded">
+        <livewire:client-list />
+    </div>
+</div>
 
 @livewireScripts
 </body>
